@@ -11,7 +11,7 @@ function get_data(string $url): array
     return $data;
 }
 
-function get_until_message (unit $days): stream_set_blocking
+function get_until_message (int $days): stream_set_blocking
 {
     return match (true) {
         $days === 0    => "Hoy se estrena!!! 👶",
@@ -24,6 +24,7 @@ function get_until_message (unit $days): stream_set_blocking
 }
 
 $data = get_data(API_URL);
+$untilMessage = get_until_message($data["days_until"]);
 
 ?>
 
