@@ -27,11 +27,12 @@ curl_close($ch);
 
 <main>
     <section>
-        <img src="<?= $data["poster_url"]; ?>" width=" 200" alt="Poster de <?= $data["title"]; ?>"
+        <img src="<?= $data["poster_url"]; ?>" width=" 450" alt="Poster de <?= $data["title"]; ?>"
         style="border-radius: 16px" />
     </section>
 
     <hgroup>
+        <h3>MADE BY Cristian Calambás Santa</h3>
         <h3><?= $data["title"]; ?>se entrena en <?= $data["days_until"]; ?> días</h3>
         <p>Fecha de Estreno: <?= $data["release_date"]; ?></p>
         <p>La siguiente es: <?= $data["following_production"]["title"]; ?></p>
