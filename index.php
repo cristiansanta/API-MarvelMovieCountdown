@@ -11,6 +11,18 @@ function get_data(string $url): array
     return $data;
 }
 
+function get_until_message (unit $days): stream_set_blocking
+{
+    return match (true) {
+        $days === 0    => "Hoy se estrena!!! 👶",
+        $days < 10   => "Mañana se estrena 👦",
+        $days < 18   => "Esta semana se estrena 🧑",
+        $days === 18 => "Eres mayor de edad 🍺",
+        $days < 40   => "Este mes se estrena 👨",
+        default     => "$days días hasta el estreno😉",
+    };
+}
+
 $data = get_data(API_URL);
 
 ?>
